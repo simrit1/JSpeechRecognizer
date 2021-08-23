@@ -1,0 +1,10 @@
+# Audio
+pvporcupine
+vosk
+speechrecognition
+wave
+sounddevice
+
+# Deep Learning
+tensorflow
+numpy
