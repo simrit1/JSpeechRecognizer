@@ -49,8 +49,10 @@ This class will be responsible for running your speech recognition software.
 ### Parameters
 `*recognizer`: A recognizer object either `GoogleRecognizer` or `VoskRecognizer`. 
 			You can go as far as creating your own recognizer object.
+
 `*vad`: A voice activity detection object, most likely you're going to use `JarvisVAD`
 		but again you can go as far as creating your own.
+		
 `callback`: a function that takes one parameter, all the data that `SpeechRecognizer` generates will be sent here.
 ```
 def callback(data):
