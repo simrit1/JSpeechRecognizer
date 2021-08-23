@@ -12,6 +12,10 @@ Download the `model.h5` file inside the models folder (You're going to use this 
 ## Usage Example
 VAD model can be found inside the models folder
 
+Say "jarvis, turn the lights off" to see it in action (obviously you can say anything but it must start with the wakeword)
+
+Wakeword is customizable, check main class documentation below
+
 ```py
 from jspeechrecognizer import GoogleRecognizer, JarvisVAD, SpeechRecognizer
 
@@ -41,7 +45,6 @@ speech.start(block=False) # pass block=False if you don't want it to block
 
 ...
 ```
-Say "jarvis, turn the lights off" to see it in action (obviously you can say anything but it must start with the wakeword)
 
 ## Main Speech Recognizer Class
 This class will be responsible for running your speech recognition software.
@@ -52,7 +55,7 @@ This class will be responsible for running your speech recognition software.
 
 `*vad`: A voice activity detection object, most likely you're going to use `JarvisVAD`
 		but again you can go as far as creating your own.
-		
+
 `callback`: a function that takes one parameter, all the data that `SpeechRecognizer` generates will be sent here.
 ```
 def callback(data):
