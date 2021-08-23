@@ -19,7 +19,8 @@ from jspeechrecognizer import GoogleRecognizer, JarvisVAD, SpeechRecognizer
 def callback(data):
 
 	"""
-	It is important not to print the complete frames cause that's going to take forever so we just filter it out
+	It is important not to print the complete frames cause that's 
+	going to take forever so we just filter it out
 	"""
 	
 	if not data['type'] == "completeFrames":
@@ -40,6 +41,27 @@ speech.start(block=False) # pass block=False if you don't want it to block
 
 ...
 ```
+Say "jarvis, turn the lights off" to see it in action (obviously you can say anything but it must start with the wakeword)
+
+## Main Speech Recognizer Class
+This class will be responsible for running your speech recognition software.
+
+### Parameters
+`*recognizer`: A recognizer object either `GoogleRecognizer` or `VoskRecognizer`. 
+			You can go as far as creating your own recognizer object.
+`*vad`: A voice activity detection object, most likely you're going to use `JarvisVAD`
+		but again you can go as far as creating your own.
+`callback`: a function that takes one parameter, all the data that `SpeechRecognizer` generates will be sent here.
+```
+def callback(data):
+	print(data)
+```
+
+`wakewords`: a `List` of wakewords, read more on [pvporcupine's documentation](https://pypi.org/project/pvporcupine/)
+
+`sensitivites`: a `List` of `float` values that correspond to each wakeword, [pvporcupine's documentation](https://pypi.org/project/pvporcupine/)
+`speechLength`: a `Float` that dictates how many seconds of silence it has to recognize before categorizing it as complete
+			By default this is 0.9 seconds and that may be too short for people who don't speak fast
 
 ## Recognizers
 JSpeechRecognizer provides 2 recognizers out of the box.
