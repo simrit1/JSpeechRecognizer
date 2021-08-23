@@ -2,13 +2,13 @@ from distutils.core import setup
 setup(
     name='jspeechrecognizer',
     packages=['jspeechrecognizer'], 
-    version='0.1-beta', 
+    version='0.2-beta', 
     license='apache-2.0',
     description='A Speech Recognition library that combines wakeword detection, speech recognition, and voice activity detection.',
     author='Philippe Mathew',
     author_email='philmattdev@gmail.com',
     url='https://github.com/bossauh/JSpeechRecognizer',
-    download_url='https://github.com/bossauh/JSpeechRecognizer/archive/refs/tags/v_0.1-beta.tar.gz',
+    download_url='https://github.com/bossauh/JSpeechRecognizer/archive/refs/tags/v_0.2-beta.tar.gz',
     keywords=['speech', 'recognition', 'vad', 'wakeword'],
     install_requires=[
         'pvporcupine',
