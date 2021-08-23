@@ -304,7 +304,6 @@ class SpeechRecognizer:
             text, status, code = self.recognizer.recognize(bytes(data), self._isSpeech)
 
             if not self._isSpeech:
-                self.callback({"type": "completeFrames", "frames": self._frames})
                 self._reset()
             
             if code == "partial": self.callback({
