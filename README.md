@@ -17,7 +17,13 @@ from jspeechrecognizer import GoogleRecognizer, JarvisVAD, SpeechRecognizer
 
 # Recognized speech and other stuff goes inside the callback function
 def callback(data):
-    print(data)
+
+	"""
+	It is important not to print the complete frames cause that's going to take forever so we just filter it out
+	"""
+	
+	if not data['type'] == "completeFrames":
+		print(data)
 
 # Create a VAD object
 vadPath = "models/vad/model.h5" # can be found inside the models folder
